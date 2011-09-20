@@ -73,8 +73,8 @@ Ext.onReady(function() {
         
         // layer sources
         sources: {           
-            osm: {
-                ptype: "gxp_osmsource"
+            google: {
+            	ptype: "gxp_googlesource"
             }
         },
         
@@ -89,8 +89,8 @@ Ext.onReady(function() {
             center: [-10764594.758211, 4523072.3184791],
             zoom: 3,
             layers: [{
-                source: "osm",
-                name: "mapnik",
+                source: "google",
+                name: "TERRAIN",
                 group: "background"
             }],
             items: [{
