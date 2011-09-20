@@ -72,12 +72,7 @@ Ext.onReady(function() {
         }],
         
         // layer sources
-        sources: {
-            local: {
-                ptype: "gxp_wmscsource",
-                url: "/geoserver/wms",
-                version: "1.1.1"
-            },
+        sources: {           
             osm: {
                 ptype: "gxp_osmsource"
             }
@@ -97,10 +92,6 @@ Ext.onReady(function() {
                 source: "osm",
                 name: "mapnik",
                 group: "background"
-            }, {
-                source: "local",
-                name: "usa:states",
-                selected: true
             }],
             items: [{
                 xtype: "gx_zoomslider",
