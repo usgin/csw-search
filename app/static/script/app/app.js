@@ -69,6 +69,13 @@ Ext.onReady(function() {
         }, {
             ptype: "gxp_navigationhistory",
             actionTarget: "map.tbar"
+        }, {
+            ptype: "gxp_googlegeocoder",
+            outputTarget: "geocoder",
+            outputConfig: {
+                emptyText: "Search for a location ...",
+                width: 400
+            }	
         }],
         
         // layer sources
@@ -88,6 +95,7 @@ Ext.onReady(function() {
             maxExtent: [-20037508, -20037508, 20037508, 20037508],
             center: [-10764594.758211, 4523072.3184791],
             zoom: 3,
+            tbar: {id: 'geocoder'},
             layers: [{
                 source: "google",
                 name: "TERRAIN",
