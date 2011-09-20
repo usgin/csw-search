@@ -49,6 +49,12 @@ Ext.onReady(function() {
             },
             outputTarget: "westpanel"
         }, {
+        	ptype: "csw_search",
+        	outputConfig: {        	
+        		cswUrl: "http://catalog.usgin.org/geoportal/csw/discovery"
+        	},
+        	outputTarget: "eastpanel"
+        }, {
             ptype: "gxp_addlayers",
             actionTarget: "tree.tbar"
         }, {
