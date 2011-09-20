@@ -18,10 +18,23 @@ Ext.onReady(function() {
                 items: ["mymap"]
             }, {
                 id: "westpanel",
-                xtype: "container",
+                xtype: "panel",
                 layout: "fit",
                 region: "west",
+                split: true,
+                collapsible: true,
+                collapsed: true,
                 width: 200
+            }, {
+            	id: "eastpanel",
+            	xtype: "panel",
+            	region: "east",
+            	layout: "fit",
+            	title: "Search the USGIN Catalog",
+            	split: true,
+            	collapsible: true,
+                collapseMode: "mini",
+                width: 490
             }],
             bbar: {id: "mybbar"}
         },
