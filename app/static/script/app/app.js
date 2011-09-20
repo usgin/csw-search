@@ -87,7 +87,7 @@ Ext.onReady(function() {
         map: {
             id: "mymap", // id needed to reference map in portalConfig above
             title: "Map",
-            projection: "EPSG:900913",
+            projection: "EPSG:102113",
             units: "m",
             maxResolution: 156543.0339,
             maxExtent: [-20037508, -20037508, 20037508, 20037508],
