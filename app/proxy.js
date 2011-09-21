@@ -5,6 +5,8 @@ var MemoryStream = require("io").MemoryStream;
 var objects = require("ringo/utils/objects");
 var responseForStatus = require("./util").responseForStatus;
 
+var {Response} = require("ringo/webapp/response");
+
 var URL = java.net.URL;
 
 var app = exports.app = function(env) {
@@ -125,10 +127,15 @@ function proxyPass(config) {
         headers.unset("WWW-Authenticate");
         headers.unset("Set-Cookie");
     }
+    
+    return new Response(exchange.status, exchange.content);
+    
+    /*
+     * For some reason this doesn't work in development mode during Ext.Ajax.Requests for CSW GetRecords
     return {
         status: exchange.status,
         headers: headers,
-        body: new MemoryStream(exchange.contentBytes)
-    };
+        body: new MemoryStream(exchange.contentBytes) 
+    };*/
 }
 
