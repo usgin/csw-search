@@ -21,6 +21,7 @@ Ext.onReady(function() {
                 xtype: "panel",
                 layout: "fit",
                 region: "west",
+                title: "Map Contents",
                 split: true,
                 collapsible: true,
                 collapsed: true,
