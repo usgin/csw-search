@@ -128,14 +128,14 @@ function proxyPass(config) {
         headers.unset("Set-Cookie");
     }
     
-    return new Response(exchange.status, exchange.content);
+    //return new Response(exchange.status, exchange.content);
     
     /*
-     * For some reason this doesn't work in development mode during Ext.Ajax.Requests for CSW GetRecords
+     * For some reason this doesn't work in development mode during Ext.Ajax.Requests for CSW GetRecords*/
     return {
         status: exchange.status,
         headers: headers,
         body: new MemoryStream(exchange.contentBytes) 
-    };*/
+    };
 }
 
