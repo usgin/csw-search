@@ -15,27 +15,44 @@ Ext.onReady(function() {
                 layout: "fit",
                 region: "center",
                 border: false,
-                items: ["mymap"]
-            }, {
-                id: "westpanel",
-                xtype: "panel",
-                layout: "fit",
-                region: "west",
-                title: "Map Contents",
-                split: true,
-                collapsible: true,
-                collapsed: true,
-                width: 200
+                items: ["mymap"],
+                margins: "5 0 5 5",
             }, {
             	id: "eastpanel",
             	xtype: "panel",
             	region: "east",
-            	layout: "fit",
-            	title: "Search the USGIN Catalog",
+            	layout: "border",
+            	title: "Hide this panel&nbsp;&nbsp;",
+            	headerStyle: "text-align: right; border: 1px solid #D0D0D0; border-top-color: white;",
             	split: true,
             	collapsible: true,
-                collapseMode: "mini",
-                width: 490
+                width: 495,
+                hideBorders: true,
+                margins: "5 5 5 0",
+                items: [
+                    {
+                    	id: "table-of-contents",
+                    	region: "north",
+                        title: "Map Contents",
+                        layout: "fit",
+                        collapsible: true,
+                        height: 200,
+                        split: true,
+                        margins: "5 0 0 0"
+                    }, {
+                    	id: "csw-search-wrapper",
+                    	region: "center",
+                    	layout: "fit",
+                    	title: "Search the USGIN Catalog",                    	
+                    }
+                    
+                ]
+            }, {
+            	id: "beta-panel",
+            	region: "north",
+            	cls: "beta-header",
+            	html: "BETA VERSION -- WORK IN PROGRESS",
+            	bodyStyle: "background-color: red;"
             }],
             bbar: {id: "mybbar"}
         },
@@ -48,13 +65,13 @@ Ext.onReady(function() {
                 border: true,
                 tbar: [] // we will add buttons to "tree.bbar" later
             },
-            outputTarget: "westpanel"
+            outputTarget: "table-of-contents"
         }, {
         	ptype: "csw_search",
         	outputConfig: {        	
         		cswUrl: "http://catalog.usgin.org/geoportal/csw/discovery"
         	},
-        	outputTarget: "eastpanel"
+        	outputTarget: "csw-search-wrapper"
         }, {
             ptype: "gxp_addlayers",
             actionTarget: "tree.tbar"
