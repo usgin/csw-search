@@ -16,3 +16,13 @@ body {
     font-size: 9px;
     bottom: 2px;
 }
+
+.beta-header div a {
+	color: white;
+	font-size: 12px;
+	float: right;
+	text-decoration: none;
+	margin-top: 4px;
+	margin-right: 8px;	
+}
+

@@ -52,7 +52,7 @@ Ext.onReady(function() {
             	id: "beta-panel",
             	region: "north",
             	cls: "beta-header",
-            	html: "BETA VERSION -- WORK IN PROGRESS",
+            	html: "<div><a href='https://github.com/rclark/csw-search/issues'>Issue Tracker</a></div><div class='beta-title'>BETA VERSION -- WORK IN PROGRESS</div>",
             	bodyStyle: "background-color: red;"
             }],
             bbar: {id: "mybbar"}
